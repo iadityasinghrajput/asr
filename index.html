@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="./images/icon1.png" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- AOS ANIMATION -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>ASR</title>
+    <style>
+      /* button top code ----------------------------------------------------  */
+      .topbtn {
+        display: none;
+        cursor: pointer;
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        z-index: 999;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #1b8545;
+        border: none;
+      }
+
+      .topbtn i {
+        font-size: 2vw;
+        color: #111;
+      }
+    </style>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">ASR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./feature.html" target="_blank"
+                >Features</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html" target="_blank">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pricing.html" target="_blank"
+                >Pricing</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html" target="_blank"
+                >Contacts</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./images/h-img1.jpg"
+              class="d-block w-100"
+              style="height: 450px"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./images/h-img2.jpg"
+              class="d-block w-100"
+              style="height: 450px"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./images/h-img3.jpg"
+              class="d-block w-100"
+              style="height: 450px"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </header>
+    <section>
+      <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom text-center text-danger">
+          <i class="fa-solid fa-arrow-left fa-bounce"></i> My Images
+        </h2>
+
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div class="col" data-aos="fade-up" data-aos-duration="3000">
+            <div
+              class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+              style="background-image: url('./images/card-3.jpg')"
+            >
+              <div
+                class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+              >
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                  Short title, long jacket
+                </h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img
+                      src="./images/card-1.jpg"
+                      alt="Bootstrap"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-white"
+                    />
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em">
+                      <use xlink:href="#geo-fill" />
+                    </svg>
+                    <small>Earth</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em">
+                      <use xlink:href="#calendar3" />
+                    </svg>
+                    <small>3d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div
+              class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+              style="background-image: url('./images/card-1.jpg')"
+            >
+              <div
+                class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+              >
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                  Much longer title that wraps to multiple lines
+                </h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img
+                      src="./images/card-2.jpg"
+                      alt="Bootstrap"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-white"
+                    />
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em">
+                      <use xlink:href="#geo-fill" />
+                    </svg>
+                    <small>Pakistan</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em">
+                      <use xlink:href="#calendar3" />
+                    </svg>
+                    <small>4d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div
+              class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+              style="background-image: url('./images/card-2.jpg')"
+            >
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                  Another longer title belongs here
+                </h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img
+                      src="./images/card-3.jpg"
+                      alt="Bootstrap"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-white"
+                    />
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em">
+                      <use xlink:href="#geo-fill" />
+                    </svg>
+                    <small>California</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em">
+                      <use xlink:href="#calendar3" />
+                    </svg>
+                    <small>5d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="album py-5">
+        <h2 class="pb-2 text-center text-danger">
+          <i class="fa-solid fa-star-of-life fa-fade"></i> My Blogs
+          <i class="fa-solid fa-star-of-life fa-fade"></i>
+        </h2>
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col" data-aos="flip-left" data-aos-duration="1500">
+              <div class="card shadow-sm">
+                <img
+                  src="./images/blog1.jpg"
+                  alt=""
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                />
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary bg-warning"
+                      >
+                        Read More
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-aos="flip-up" data-aos-duration="1500">
+              <div class="card shadow-sm">
+                <img
+                  src="./images/blog2.png"
+                  alt=""
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                />
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary bg-warning"
+                      >
+                        Read More
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-aos="flip-right" data-aos-duration="1500">
+              <div class="card shadow-sm">
+                <img
+                  src="./images/blog3.jpg"
+                  alt=""
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                />
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary bg-warning"
+                      >
+                        Read More
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-aos="flip-right" data-aos-duration="1500">
+              <div class="card shadow-sm">
+                <img
+                  src="./images/h-img1.jpg"
+                  alt=""
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                />
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary bg-warning"
+                      >
+                        Read More
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-aos="flip-down" data-aos-duration="1500">
+              <div class="card shadow-sm">
+                <img
+                  src="./images/blog1.jpg"
+                  alt=""
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                />
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary bg-warning"
+                      >
+                        Read More
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-aos="flip-left" data-aos-duration="1500">
+              <div class="card shadow-sm">
+                <img
+                  src="./images/h-img3.jpg"
+                  alt=""
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                />
+
+                <div class="card-body">
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary bg-warning"
+                      >
+                        Read More
+                      </button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2 class="pb-2 text-center text-danger">
+        <i class="fa-solid fa-star-of-life fa-fade"></i>My Team
+        <i class="fa-solid fa-star-of-life fa-fade"></i>
+      </h2>
+      <div class="d-flex justify-content-center">
+        <div class="row container text-center">
+          <div class="col-lg-4">
+            <img
+              src="./images/man-8493244_640.jpg"
+              class="bd-placeholder-img rounded-circle"
+              width="140"
+              height="140"
+              alt=""
+            />
+
+            <h2>Neil</h2>
+            <p>
+              Some representative placeholder content for the three columns of
+              text below the carousel. This is the first column.
+            </p>
+            <p>
+              <a class="btn btn-secondary bg-primary text-warning" href="#"
+                >View details &raquo;</a
+              >
+            </p>
+          </div>
+          <!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img
+              src="./images/woman-751236_640.jpg"
+              class="bd-placeholder-img rounded-circle"
+              width="140"
+              height="140"
+              alt=""
+            />
+
+            <h2>Nitin</h2>
+            <p>
+              Some representative placeholder content for the three columns of
+              text below the carousel. This is the first column.
+            </p>
+            <p>
+              <a class="btn btn-secondary bg-primary text-warning" href="#"
+                >View details &raquo;</a
+              >
+            </p>
+          </div>
+          <!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img
+              src="./images/girl-1894125_640.jpg"
+              class="bd-placeholder-img rounded-circle"
+              width="140"
+              height="140"
+              alt=""
+            />
+
+            <h2>Mukesh</h2>
+            <p>
+              Some representative placeholder content for the three columns of
+              text below the carousel. This is the first column.
+            </p>
+            <p>
+              <a class="btn btn-secondary bg-primary text-warning" href="#"
+                >View details &raquo;</a
+              >
+            </p>
+          </div>
+          <!-- /.col-lg-4 -->
+        </div>
+      </div>
+    </section>
+    <footer class="d-flex justify-content-center">
+      <div class="row container">
+        <div class="col-8">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56957.53322429594!2d80.96827781479789!3d26.844855565290207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd49fc60a843%3A0x92fc72e19b623f6a!2sGomti%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1716382137267!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="col-4 p-5">
+          <h2>Contact us</h2>
+          <p>email:- infoxyz@gmail.com</p>
+          <p>+91 9999992029</p>
+        </div>
+      </div>
+    </footer>
+    <button class="topbtn"><i class="fa-solid fa-arrow-up"></i></button>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      ////////////////////////////////// top scroll //////////////////////////////////////////
+      const button = document.querySelector(".topbtn");
+
+      const displayButton = () => {
+        window.addEventListener("scroll", () => {
+          console.log(window.scrollY);
+
+          if (window.scrollY > 100) {
+            button.style.display = "block";
+          } else {
+            button.style.display = "none";
+          }
+        });
+      };
+
+      const scrollToTop = () => {
+        button.addEventListener("click", () => {
+          window.scroll({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+          console.log(event);
+        });
+      };
+
+      displayButton();
+      scrollToTop();
+    </script>
+  </body>
+</html>
